@@ -13,10 +13,33 @@ document.getElementById('enterBtn').addEventListener('click',()=>{
   document.getElementById('lore').scrollIntoView({behavior:'smooth'});
 });
 
-(function(){
-  const el = document.getElementById('tagline');
-  const txt = el.textContent; el.textContent='';
-  let i=0; setTimeout(()=>{const t=setInterval(()=>{el.textContent+=txt[i++]; if(i>=txt.length)clearInterval(t)},18)},600);
+(function() {
+  let control = 0;
+  function typeText(elementId, delayStart = 0, speed = 60) {
+    const el = document.getElementById(elementId);
+    const text = el.textContent.trim();
+    el.textContent = '';
+    let i = 0;
+
+    setTimeout(() => {
+      const interval = setInterval(() => {
+        el.textContent += text[i++];
+        if (i >= text.length) {
+          clearInterval(interval)
+          el.classList.add('glow');
+          if(control == 1){
+            el.classList.add('done');
+          }else{
+            control++
+          }
+        };
+      }, speed);
+    }, delayStart);
+  }
+
+
+  typeText('tag1', 2000, 60);
+  typeText('tag2', 6000, 50);
 })();
 
 document.querySelectorAll('.glyph').forEach(g =>{
