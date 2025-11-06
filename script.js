@@ -1,0 +1,53 @@
+const glyphs = document.querySelectorAll('.glyph');
+glyphs.forEach(glyph => {
+    glyph.addEventListener('mousemove', e => {
+        const rect = glyph.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        glyph.style.setProperty('--x', `${x}px`);
+        glyph.style.setProperty('--y', `${y}px`);
+    })
+})
+
+document.getElementById('enterBtn').addEventListener('click',()=>{
+  document.getElementById('lore').scrollIntoView({behavior:'smooth'});
+});
+
+(function(){
+  const el = document.getElementById('tagline');
+  const txt = el.textContent; el.textContent='';
+  let i=0; setTimeout(()=>{const t=setInterval(()=>{el.textContent+=txt[i++]; if(i>=txt.length)clearInterval(t)},18)},600);
+})();
+
+document.querySelectorAll('.glyph').forEach(g =>{
+  g.addEventListener('mouseenter', ()=> g.style.boxShadow='0 18px 40px rgba(142,90,255,0.06)');
+  g.addEventListener('mouseleave', ()=> g.style.boxShadow='');
+});
+
+(function(){
+  const trail = document.createElement('div');
+  trail.style.position='fixed'; trail.style.pointerEvents='none'; trail.style.zIndex=9999;
+  document.body.appendChild(trail);
+  document.addEventListener('mousemove', (e)=>{
+    const dot = document.createElement('div');
+    dot.style.position='absolute';
+    dot.style.left=(e.clientX-6)+'px';
+    dot.style.top=(e.clientY-6)+'px';
+    dot.style.width='12px'; dot.style.height='12px';
+    dot.style.borderRadius='50%'; dot.style.opacity='0.9';
+    dot.style.background='radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(142,90,255,0.9) 40%, rgba(79,163,255,0.2) 100%)';
+    dot.style.mixBlendMode='screen';
+    dot.style.transition='opacity .9s, transform .9s';
+    trail.appendChild(dot);
+    requestAnimationFrame(()=>{ dot.style.transform='translateY(-12px) scale(.6)'; dot.style.opacity='0'; });
+    setTimeout(()=>dot.remove(),900);
+  });
+})();
+
+document.getElementById('joinBtn').addEventListener('click', ()=>{
+  const email = document.getElementById('email').value.trim();
+  if(!email) { alert('Enter your email to join the conclave'); return; }
+  alert('Thanks — you\'ll be notified when Nocthyr awakens.');
+  document.getElementById('email').value='';
+});
+
