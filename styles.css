@@ -361,6 +361,7 @@ section {
   background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba( 150, 0, 255, 0.4), transparent 70%);
   pointer-events: none;
   transform: translate(-50%, -50%) scale(0);
+  border-radius: 10px;
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0;
   z-index: 10;
