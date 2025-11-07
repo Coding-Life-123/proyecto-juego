@@ -411,7 +411,7 @@ section {
 
 .char-dark .portrait-glow{
   box-shadow: 0 0 20px rgb(255, 100, 10);
-  transition: 2s ease;
+  transition: 1s ease;
 }
 
 .char .portrait-arc{
@@ -420,7 +420,7 @@ section {
 
 .char-arc .portrait-glow{
   box-shadow: 0 0 20px rgb(16, 194, 0);
-  transition: 2s ease;
+  transition: 1s ease;
 }
 
 .char .portrait-div{
@@ -429,7 +429,7 @@ section {
 
 .char-div .portrait-glow{
   box-shadow: 0 0 20px rgb(10, 165, 255);
-  transition: 2s ease;
+  transition: 1s ease;
 }
 
 .char .portrait-dark,
@@ -444,19 +444,19 @@ section {
 .char-dark .h4-glow{
   text-shadow: 0 0 20px rgb(255, 100, 10);
   color: rgb(255, 100, 10);
-  transition:  2s ease;
+  transition:  1s ease;
 }
 
 .char-arc .h4-glow{
   text-shadow: 0 0 20px rgb(16, 194, 0);
   color: rgb(16, 194, 0);
-  transition: 2s ease;
+  transition: 1s ease;
 }
 
 .char-div .h4-glow{
   text-shadow: 0 0 20px rgb(10, 165, 255);
   color: rgb(10, 165, 255);
-  transition: 2s ease;
+  transition: 1s ease;
 }
 
 .char h4 {
