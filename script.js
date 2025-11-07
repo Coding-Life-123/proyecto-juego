@@ -27,9 +27,9 @@ document.getElementById('enterBtn').addEventListener('click',()=>{
         if (i >= text.length) {
           clearInterval(interval)
           el.classList.add('glow');
-          if(control == 1){
-            el.classList.add('done');
-          }else{
+          el.classList.add('done');
+          if(control == 0){
+            el.classList.remove('done');
             control++
           }
         };
@@ -74,3 +74,10 @@ document.getElementById('joinBtn').addEventListener('click', ()=>{
   document.getElementById('email').value='';
 });
 
+document.querySelectorAll('.char').forEach(char=>{
+  const title = char.querySelector('h4');
+  const div = char.querySelector('div');
+
+  char.addEventListener('mouseenter', ()=> {title.classList.add('h4-glow'), div.classList.add('portrait-glow')});
+  char.addEventListener('mouseleave', ()=> {title.classList.remove('h4-glow'), div.classList.remove('portrait-glow')})
+})

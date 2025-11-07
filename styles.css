@@ -1,11 +1,20 @@
 @keyframes glow {
   0% { text-shadow: 0 0 0px transparent; }
-  50% { text-shadow: 0 0 15px #9a6dff; }
+  50% { text-shadow: 0 0 30px #9263ff; }
   100% { text-shadow: 0 0 0px transparent; }
 }
 
 @keyframes blink{
   to{opacity: 0;}
+}
+
+@keyframes drift {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 1000px -1000px, -1000px 1000px;
+  }
 }
 
 :root {
@@ -69,16 +78,8 @@ a {
   background-repeat: repeat;
   animation: drift 20s linear infinite;
 }
-@keyframes drift {
-  from {
-    background-position: 0 0, 0 0;
-  }
-  to {
-    background-position: 1000px -1000px, -1000px 1000px;
-  }
-}
 
-/* ====== HERO ====== */
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -100,14 +101,12 @@ a {
   object-fit: cover;
   filter: brightness(0.35) contrast(1.05) saturate(0.95);
 }
-/* fallback animated gradient */
+
 .hero__bg .fallback {
-  background: radial-gradient(
-      ellipse at center,
-      rgba(79, 163, 255, 0.06),
-      transparent 20%
-    ),
-    linear-gradient(180deg, #05050a 0%, #0b0820 100%);
+  background-image: url("./fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero__content {
@@ -118,15 +117,17 @@ a {
   gap: 18px;
   padding: 60px 20px;
 }
+
 .logo {
   font-family: "Cinzel", serif;
   letter-spacing: 6px;
   font-size: 44px;
   text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.06);
+  -webkit-text-stroke: 1.3px var(--muted);
   position: relative;
 }
+
 .logo::after {
   content: "NOCTHYR";
   position: absolute;
@@ -188,7 +189,6 @@ a {
   color: var(--muted);
 }
 
-/* floating runes animation */
 .runes {
   position: absolute;
   inset: 0;
@@ -204,7 +204,6 @@ a {
   transform: translate3d(0, 0, 0);
 }
 
-/* ====== SECTION: ORIGIN ====== */
 section {
   padding: 80px 0;
 }
@@ -239,7 +238,6 @@ section {
   color: var(--muted);
 }
 
-/* ====== CLANS ====== */
 .clans {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -392,7 +390,7 @@ section {
   overflow: hidden;
 }
 .char .portrait {
-  height: 140px;
+  height: 200px;
   border-radius: 10px;
   background: linear-gradient(
     180deg,
@@ -404,11 +402,69 @@ section {
   justify-content: center;
   color: var(--muted);
   font-weight: 700;
+
 }
+
+.char .portrait-dark{
+  background-image: url('./dark-portrait.jpg');  
+}
+
+.char-dark .portrait-glow{
+  box-shadow: 0 0 20px rgb(255, 100, 10);
+  transition: 2s ease;
+}
+
+.char .portrait-arc{
+  background-image: url('./arc-portrait.jpg');
+}
+
+.char-arc .portrait-glow{
+  box-shadow: 0 0 20px rgb(16, 194, 0);
+  transition: 2s ease;
+}
+
+.char .portrait-div{
+  background-image: url('./div-portrait.jpg');
+}
+
+.char-div .portrait-glow{
+  box-shadow: 0 0 20px rgb(10, 165, 255);
+  transition: 2s ease;
+}
+
+.char .portrait-dark,
+.char .portrait-arc,
+.char .portrait-div{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 3s ease;
+}
+
+.char-dark .h4-glow{
+  text-shadow: 0 0 20px rgb(255, 100, 10);
+  color: rgb(255, 100, 10);
+  transition:  2s ease;
+}
+
+.char-arc .h4-glow{
+  text-shadow: 0 0 20px rgb(16, 194, 0);
+  color: rgb(16, 194, 0);
+  transition: 2s ease;
+}
+
+.char-div .h4-glow{
+  text-shadow: 0 0 20px rgb(10, 165, 255);
+  color: rgb(10, 165, 255);
+  transition: 2s ease;
+}
+
 .char h4 {
   margin: 12px 0 4px 0;
   font-family: "Cinzel", serif;
+  transition: 3s ease;
 }
+
 .char p {
   color: var(--muted);
   font-size: 14px;
