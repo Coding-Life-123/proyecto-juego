@@ -1,0 +1,75 @@
+body {
+  background: radial-gradient(circle at center, #0a0a12, #050509 85%);
+  color: #eaeaea;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  text-align: center;
+  margin: 0;
+  padding: 60px 0;
+}
+
+h1 {
+  font-family: "Cinzel", serif;
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-weight: 400;
+  color: #a6a6a6;
+  margin-bottom: 60px;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.map-card {
+  position: relative;
+  width: 320px;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.map-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.map-card:hover img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.map-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(200, 200, 255, 0.5);
+}
+
+.map-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(10, 10, 20, 0.7);
+  padding: 10px 0;
+  font-family: "Cinzel", serif;
+  font-size: 1.3rem;
+  color: #f1f1f1;
+}
+
+#player-name {
+  margin-top: 10px;
+  color: #c1c1c1;
+  font-size: 1rem;
+}

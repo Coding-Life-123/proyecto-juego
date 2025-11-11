@@ -9,117 +9,26 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <div class="particles"></div>
-  <div class="runes" aria-hidden="true">
-    <svg class="rune" style="left:8%;top:10%;width:120px;opacity:.04" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/></svg>
-    <svg class="rune" style="left:72%;top:20%;width:200px;opacity:.03" viewBox="0 0 100 100"><path d="M10 50 a40 40 0 1 0 80 0 a40 40 0 1 0 -80 0" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/></svg>
-  </div>
-
-  <header class="hero" role="banner">
-    <div class="hero__bg" aria-hidden="true">
-      <div class="fallback"></div>
-    </div>
-    <div class="hero__content container">
-      <div class="logo">NOCTHYR</div>
-      <p class="tagline" id="tagline"><span id="tag1">When the night whispers.</span> <span id="tag2">magic awakens...</span></p>
-      <div class="hero-buttons">
-        <button class="btn-primary" id="enterBtn">Enter the Realm</button>
-        <a class="btn-ghost" href="#lore">Discover Lore</a>
-      </div>
-      <div class="teaser-text">Teaser • Coming Soon</div>
-    </div>
-  </header>
-
-  <main>
-    <section id="lore" class="container">
-      <div class="panel origin">
-        <div class="text">
-          <h3>The Origin</h3>
-          <p>From the ruins of the First Dawn, three great clans rose to master the Aether...</p>
-        </div>
-        <div class="emblems">
-          <div class="emblem">✦ Emblem of the Three</div>
-          <div class="emblem">✦ Runes of the Aether</div>
-          <div class="emblem">✦ The Broken Seal</div>
+      
+    <div class="hero" role="banner">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="fallback">
+          <video data-testid="backdrop-embed-video" autoplay muted loop playsinline="">
+            <source data-testid="source-video/mp4" src="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/1f5b2cf01a1cf2afa1ce61febee6e2e900808347.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
-    </section>
-
-    <section class="container">
-      <h3>Clans of Nocthyr</h3>
-      <div class="clans">
-        <article class="clan-card clan-dark">
-          <div class="clan-symbol">☾</div>
-          <div class="clan-name">Clan of Darkness</div>
-          <div class="clan-desc">Masters of shadows...</div>
-        </article>
-        <article class="clan-card clan-arc">
-          <div class="clan-symbol">✦</div>
-          <div class="clan-name">Clan of the Arcane</div>
-          <div class="clan-desc">Keepers of ancient knowledge...</div>
-        </article>
-        <article class="clan-card clan-div">
-          <div class="clan-symbol">☀</div>
-          <div class="clan-name">Clan of the Divine</div>
-          <div class="clan-desc">Bearer of celestial power...</div>
-        </article>
-      </div>
-    </section>
-
-    <section class="container">
-      <h3>The Aether & Spells</h3>
-      <div class="aether">
-        <div class="glyph" data-glyph="Fire"><p>Ignis</p></div>
-        <div class="glyph" data-glyph="Frost"><p>Glacia</p></div>
-        <div class="glyph" data-glyph="Storm"><p>Tempest</p></div>
-        <div class="glyph" data-glyph="Ether"><p>Vellum</p></div>
-        <div class="glyph" data-glyph="Blood"><p>Sanguis</p></div>
-        <div class="glyph" data-glyph="Time"><p>Aeon</p></div>
-        <div class="glyph" data-glyph="Spirit"><p>Wraith</p></div>
-        <div class="glyph" data-glyph="Stone"><p>Terra</p></div>
-      </div>  
-    </section>
-
-    <section class="container">
-      <h3>Key Figures</h3>
-      <div class="chars">
-        <div class="char char-dark">
-          <div class="portrait portrait-dark"></div>
-          <h4>Rha’gorath the Incandescent</h4>
-          <p>The Heart of the Abyssal Flame...</p>
-        </div>
-        <div class="char char-arc">
-          <div class="portrait portrait-arc"></div>
-          <h4>Lyssara Veyne</h4>
-          <p>The Weaver of Starborn Shadows...</p>
-        </div>
-        <div class="char char-div">
-          <div class="portrait portrait-div"></div>
-          <h4>Atherion Valgarde</h4>
-          <p>The Frozen Thronekeeper...</p>
+      <div class="hero__content container">
+        <div class="logo">NOCTHYR</div>
+        <p class="tagline" id="tagline"><span id="tag1">Cuando la oscuridad murmura.</span><span id="tag2"> El poder despierta..</span><span class="done"></span></p>
+        <div class="hero-buttons">
+          <a href="mapas.html" class="btn-primary" id="enterBtn">Jugar...</a>
         </div>
       </div>
-    </section>
-
-    <section class="container">
-      <div class="cta">
-        <div class="left">
-          <div>Answer the Call</div>
-          <div class="muted">Join the Conclave — coming soon.</div>
-        </div>
-        <form onsubmit="return false">
-          <input type="email" id="email" placeholder="Your email" />
-          <button class="btn-primary" id="joinBtn">Join the Conclave</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">© NOCTHYR — Teaser Prototype • Built with love</div>
-  </footer>
-
-  <script src="script.js"></script>
+      <footer>
+      <div class="container">© NOCTHYR — Teaser Prototype • Built with love</div>
+      </footer>
+    </div>    
+    <script src="script.js"></script>
 </body>
 </html>

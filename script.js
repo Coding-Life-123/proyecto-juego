@@ -14,10 +14,9 @@ document.getElementById('enterBtn').addEventListener('click',()=>{
 });
 
 (function() {
-  let control = 0;
   function typeText(elementId, delayStart = 0, speed = 60) {
     const el = document.getElementById(elementId);
-    const text = el.textContent.trim();
+    const text = el.textContent;
     el.textContent = '';
     let i = 0;
 
@@ -27,11 +26,6 @@ document.getElementById('enterBtn').addEventListener('click',()=>{
         if (i >= text.length) {
           clearInterval(interval)
           el.classList.add('glow');
-          el.classList.add('done');
-          if(control == 0){
-            el.classList.remove('done');
-            control++
-          }
         };
       }, speed);
     }, delayStart);

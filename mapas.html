@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nocthyr — Mapas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="mapas.css">
+  <style>
+    body {
+      background: radial-gradient(circle at center, #0a0a12, #050509 85%);
+      color: #eaeaea;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+    }
+    p {
+      color: #a6a6a6;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Elige tu campo de batalla</h1>
+  <h2 id="player-name"></h2>
+
+  <div class="map-container">
+    <div class="map-card" data-name="Campo de batalla — 5v5" data-map="5v5">
+      <img src="./map3.png" alt="Mapa 5v5">
+      <div class="map-title">Campo de batalla — 5v5</div>
+    </div>
+
+    <div class="map-card" data-name="Partida rápida — 5v5" data-map="5v5">
+      <img src="./map1.png" alt="Mapa 5v5">
+      <div class="map-title">Partida rápida — 5v5</div>
+    </div>
+
+    <div class="map-card" data-name="Puente del abismo — ARAM" data-map="aram">
+      <img src="./map2.png" alt="Mapa ARAM">
+      <div class="map-title">Puente del abismo — ARAM</div>
+    </div>
+  </div>
+
+  <script src="mapas.js"></script>
+</body>
+</html>

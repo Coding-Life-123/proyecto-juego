@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  background-image: url("./fondo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #eaeaea;
+  overflow-x: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+header h1 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+}
+
+header p {
+  color: #a6a6a6;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.characters {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  row-gap: 40px;
+  column-gap: 100px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.character {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0.8);
+}
+
+.character:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
+.character img {
+  width: 260px;
+  height: 260px;
+  border-radius: 25px;
+  box-shadow: 0 0 40px rgba(120, 70, 255, 0.3);
+}
+
+/* Tarjeta de stats */
+#stats-card {
+  position: fixed;
+  background: rgba(15, 15, 25, 0.95);
+  border: 1px solid rgba(150, 100, 255, 0.3);
+  backdrop-filter: blur(10px);
+  color: #f4f4f4;
+  border-radius: 15px;
+  padding: 25px 30px;
+  width: 320px;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 0 25px rgba(150, 100, 255, 0.3);
+  font-family: 'Cinzel', serif;
+  z-index: 999;
+}
+
+#stats-card.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#stats-card h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.4rem;
+  color: #b197ff;
+  text-shadow: 0 0 5px rgba(177,151,255,0.5);
+}
+
+#stats-card p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}

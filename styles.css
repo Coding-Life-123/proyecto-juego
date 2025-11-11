@@ -38,13 +38,16 @@ body {
 }
 body {
   margin: 0;
+  height: 100vh;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial;
-  background: var(--bg);
   color: #e7e9ee;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -84,6 +87,7 @@ a {
   position: relative;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 2;
@@ -99,14 +103,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.35) contrast(1.05) saturate(0.95);
-}
-
-.hero__bg .fallback {
-  background-image: url("./fondo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: absolute;
 }
 
 .hero__content {
@@ -114,8 +111,14 @@ a {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin: auto;
   gap: 18px;
   padding: 60px 20px;
+}
+
+footer{
+  margin: 0 auto;
+  margin-top: auto;
 }
 
 .logo {
@@ -150,8 +153,9 @@ a {
 
 .tagline {
   max-width: 760px;
-  font-size: 18px;
-  color: var(--muted);
+  font-size: 20px;
+  font-weight: 600;
+  color: wheat;
   line-height: 1.5;
 }
 
@@ -162,8 +166,11 @@ a {
 }
 
 .tagline span.done::after{
-  content: "|";
+  content: ".";
   opacity: 1;
+  font-size: 20px;
+  font-weight: 600;
+  color: wheat;
 }
 
 .glow {
@@ -177,368 +184,62 @@ a {
   background: linear-gradient(90deg, var(--accent-dark), var(--accent-arc));
   box-shadow: 0 6px 24px rgba(79, 163, 255, 0.08);
   font-weight: 600;
-  color: #07101a;
+  color: white;
   border: none;
   cursor: pointer;
 }
-.btn-ghost {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 10px 18px;
-  border-radius: 10px;
-  color: var(--muted);
-}
 
-.runes {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-.rune {
-  position: absolute;
-  width: 84px;
-  height: 84px;
-  opacity: 0.06;
-  filter: blur(1px);
-  transform: translate3d(0, 0, 0);
-}
 
-section {
-  padding: 80px 0;
-}
-.panel {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
-  border-radius: 14px;
-  padding: 28px;
-  backdrop-filter: blur(6px);
-}
-.origin {
-  display: flex;
-  align-items: center;
-  gap: 26px;
-}
-.origin .text {
-  flex: 1;
-}
-.origin .emblems {
-  width: 320px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.emblem {
-  height: 80px;
-  border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  color: var(--muted);
-}
+/*personajes.css*/
 
-.clans {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 28px;
-}
-.clan-card {
-  background: linear-gradient(180deg, var(--card), rgba(255, 255, 255, 0.02));
-  border-radius: 12px;
-  padding: 20px;
-  min-height: 220px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.36s ease, box-shadow 0.36s ease;
-  border: 1px solid rgba(255, 255, 255, 0.03);
-}
-.clan-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
-}
-.clan-symbol {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-}
-.clan-name {
-  margin-top: 12px;
-  font-family: "Cinzel", serif;
-  font-size: 20px;
-}
-.clan-desc {
-  color: var(--muted);
-  margin-top: 6px;
-}
-
-.clan-dark .clan-symbol {
-  background: linear-gradient(
-    135deg,
-    rgba(142, 90, 255, 0.18),
-    rgba(144, 79, 255, 0.06)
-  );
-  color: var(--accent-dark);
-}
-
-.clan-arc .clan-symbol {
-  background: linear-gradient(
-    135deg,
-    rgba(48, 48, 254, 0.18),
-    rgba(79, 138, 255, 0.06)
-  );
-  color: var(--accent-arc);
-}
-
-.clan-div .clan-symbol {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 217, 90, 0.18),
-    rgba(255, 173, 79, 0.06)
-  );
-  color: var(--accent-div);
-}
-
-.clan-dark {
-  background-image: url("./dark.png");
-}
-
-.clan-arc{
-  background-image: url("./arcane.png");
-}
-
-.clan-div{
-  background-image: url("./divine.png");
-}
-
-.clan-dark, 
-.clan-arc,
-.clan-div{
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* ====== AETHER GRID ====== */
-.aether {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-top: 18px;
-}
-
-.glyph {
-  background: var(--glass);
-  height: 120px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: var(--muted);
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
-  cursor: pointer;
-}
-
-.glyph:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 12px 30px rgba(79, 163, 255, 0.06);
-  color: #fff;
-}
-
-.glyph::before{
-  content:"";
-  position:absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba( 150, 0, 255, 0.4), transparent 70%);
-  pointer-events: none;
-  transform: translate(-50%, -50%) scale(0);
-  border-radius: 10px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  z-index: 10;
-}
-
-.glyph:hover::before{
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-}
-
-.glyph p{
-  z-index: 20;
-}
-
-/* ====== CHARACTERS ====== */
-.chars {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-.char {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
-  padding: 18px;
-  border-radius: 12px;
-  min-height: 260px;
-  position: relative;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at center, #0b0b13, #050509 80%);
+  color: #eaeaea;
   overflow: hidden;
 }
-.char .portrait {
-  height: 200px;
-  border-radius: 10px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.01)
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  font-weight: 700;
 
-}
-
-.char .portrait-dark{
-  background-image: url('./dark-portrait.jpg');  
-}
-
-.char-dark .portrait-glow{
-  box-shadow: 0 0 20px rgb(255, 100, 10);
-  transition: 1s ease;
-}
-
-.char .portrait-arc{
-  background-image: url('./arc-portrait.jpg');
-}
-
-.char-arc .portrait-glow{
-  box-shadow: 0 0 20px rgb(16, 194, 0);
-  transition: 1s ease;
-}
-
-.char .portrait-div{
-  background-image: url('./div-portrait.jpg');
-}
-
-.char-div .portrait-glow{
-  box-shadow: 0 0 20px rgb(10, 165, 255);
-  transition: 1s ease;
-}
-
-.char .portrait-dark,
-.char .portrait-arc,
-.char .portrait-div{
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: 2s ease;
-}
-
-.char-dark .h4-glow{
-  text-shadow: 0 0 20px rgb(255, 100, 10);
-  color: rgb(255, 100, 10);
-  transition:  1s ease;
-}
-
-.char-arc .h4-glow{
-  text-shadow: 0 0 20px rgb(16, 194, 0);
-  color: rgb(16, 194, 0);
-  transition: 1s ease;
-}
-
-.char-div .h4-glow{
-  text-shadow: 0 0 20px rgb(10, 165, 255);
-  color: rgb(10, 165, 255);
-  transition: 1s ease;
-}
-
-.char h4 {
-  margin: 12px 0 4px 0;
-  font-family: "Cinzel", serif;
-  transition: 2s ease;
-}
-
-.char p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* ====== CTA ====== */
-.cta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 22px;
-  border-radius: 12px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.01)
-  );
-}
-.cta .left {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-.cta input {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  padding: 12px;
-  border-radius: 8px;
-  color: #fff;
-}
-
-/* ====== Footer small ====== */
-footer {
-  padding: 30px 0;
-  color: var(--muted);
+header {
   text-align: center;
-  font-size: 13px;
+  margin-top: 40px;
 }
 
-/* ====== Responsiveness ====== */
-@media (max-width: 980px) {
-  .clans {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .aether {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .chars {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 640px) {
-  .hero {
-    min-height: 68vh;
-  }
-  .clans {
-    grid-template-columns: 1fr;
-  }
-  .aether {
-    grid-template-columns: 1fr;
-  }
-  .chars {
-    grid-template-columns: 1fr;
-  }
-  .origin {
-    flex-direction: column;
-  }
-  .logo {
-    font-size: 32px;
-  }
+header h1 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 2px;
+  font-size: 2.2rem;
 }
 
-/* small helper */
-.muted {
-  color: var(--muted);
+header p {
+  color: #a6a6a6;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.characters {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 80px;
+}
+
+.character {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  filter: brightness(0.8);
+}
+
+.character:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.character img {
+  width: 220px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(120, 70, 255, 0.3);
 }
