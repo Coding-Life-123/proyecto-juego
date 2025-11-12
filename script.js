@@ -60,18 +60,3 @@ document.querySelectorAll('.glyph').forEach(g =>{
     setTimeout(()=>dot.remove(),900);
   });
 })();
-
-document.getElementById('joinBtn').addEventListener('click', ()=>{
-  const email = document.getElementById('email').value.trim();
-  if(!email) { alert('Enter your email to join the conclave'); return; }
-  alert('Thanks — you\'ll be notified when Nocthyr awakens.');
-  document.getElementById('email').value='';
-});
-
-document.querySelectorAll('.char').forEach(char=>{
-  const title = char.querySelector('h4');
-  const div = char.querySelector('div');
-
-  char.addEventListener('mouseenter', ()=> {title.classList.add('h4-glow'), div.classList.add('portrait-glow')});
-  char.addEventListener('mouseleave', ()=> {title.classList.remove('h4-glow'), div.classList.remove('portrait-glow')})
-})

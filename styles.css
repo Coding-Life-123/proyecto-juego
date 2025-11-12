@@ -4,6 +4,15 @@
   100% { text-shadow: 0 0 0px transparent; }
 }
 
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes blink{
   to{opacity: 0;}
 }
@@ -116,6 +125,14 @@ a {
   padding: 60px 20px;
 }
 
+.flex{
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: space-betweens;
+  gap: 30px;
+}
+
 footer{
   margin: 0 auto;
   margin-top: auto;
@@ -179,9 +196,8 @@ footer{
 
 .btn-primary {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 20px 30px;
   border-radius: 10px;
-  background: linear-gradient(90deg, var(--accent-dark), var(--accent-arc));
   box-shadow: 0 6px 24px rgba(79, 163, 255, 0.08);
   font-weight: 600;
   color: white;
@@ -189,57 +205,38 @@ footer{
   cursor: pointer;
 }
 
+.btn1{
+  background: linear-gradient(0deg, rgb(218, 121, 2), rgb(255, 187, 0));
+}
 
-/*personajes.css*/
+.btn1:hover::before{
+  content: '';
+  box-shadow: linear-gradient(0deg, rgb(218, 121, 2), rgb(255, 187, 0));
+  z-index: 10;
+  position: absolute;
+  inset: -20px;
+  animation: spin 5s linear infinite;
+}
 
-body {
+.btn1 p{
+  z-index: 20;  
   margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at center, #0b0b13, #050509 80%);
-  color: #eaeaea;
-  overflow: hidden;
 }
 
-header {
-  text-align: center;
-  margin-top: 40px;
+.btn2{
+  background: linear-gradient(0deg, rgb(112, 4, 184), rgb(51, 0, 99));
 }
 
-header h1 {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 2px;
-  font-size: 2.2rem;
+.btn2:hover::before{
+  content: '';
+  box-shadow: linear-gradient(0deg, rgb(112, 4, 184), rgb(51, 0, 99));
+  z-index: 10;
+  position: absolute;
+  inset: -20px;
+  animation: spin 5s linear infinite;
 }
 
-header p {
-  color: #a6a6a6;
-  font-size: 1rem;
-  margin-top: 5px;
-}
-
-.characters {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-top: 80px;
-}
-
-.character {
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  filter: brightness(0.8);
-}
-
-.character:hover {
-  transform: scale(1.1);
-  filter: brightness(1.1);
-}
-
-.character img {
-  width: 220px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(120, 70, 255, 0.3);
+.btn2 p{
+  z-index: 20;
+  margin: 0;
 }
